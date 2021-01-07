@@ -4,7 +4,7 @@ if os.path.exists("env.py"):
     import env
 
 
-MONGO_URI = os.environ.get("MONGO_URI")
+MONGO_URI = os.environ.get("MONGO_URL")
 DATABASE = "myFirstDB"
 COLLECTION = "celebrities"
 
@@ -18,7 +18,7 @@ def mongo_connect(url):
         print("Could not connect to MongoDB: %s") % e
 
 
-conn = mongo_connect(MONGO_URI)
+conn = mongo_connect(MONGO_URL)
 
 coll = conn[DATABASE][COLLECTION]
 
